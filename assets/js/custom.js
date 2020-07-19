@@ -1,4 +1,4 @@
-$(document).ready(function() {
+JQuery(document).ready(function() {
     "use strict";
     /*=============================================
         Template Name   : Consult | HTML5 Template
@@ -32,7 +32,7 @@ $(document).ready(function() {
     /*-------------------------*/
     /*  01. Hamburger Menu Icon
     /*-------------------------*/
-    if ($(".navbar").length) {
+    if (JQuery(".navbar").length) {
         var options = {
             offset: 350,
             offsetSide: 'top',
@@ -42,10 +42,10 @@ $(document).ready(function() {
                 unstick: 'banner--unstick'
             },
             onStick: function() {
-                $($.SmartMenus.Bootstrap.init);
+                JQuery(JQuery.SmartMenus.Bootstrap.init);
             },
             onUnstick: function() {
-                $('.navbar .btn-group').removeClass('open');
+                JQuery('.navbar .btn-group').removeClass('open');
             }
         };
         var banner = new Headhesive('.navbar', options);
@@ -54,14 +54,14 @@ $(document).ready(function() {
     /*-----------------------*/
     /*  02. Hamburger Menu Icon
     /*-----------------------*/
-    $(".nav-bars").on("click", function() {
-        $(".nav-bars").toggleClass("is-active");
+    JQuery(".nav-bars").on("click", function() {
+        JQuery(".nav-bars").toggleClass("is-active");
     });
 
     /*--------------------------------
         03. Scroll To Top
     ---------------------------------*/
-    $.scrollUp({
+    JQuery.scrollUp({
         scrollText: '<i class="fa fa-angle-up"></i>',
         easingType: 'linear',
         scrollSpeed: 900,
@@ -71,7 +71,7 @@ $(document).ready(function() {
     /*--------------------------------
         04. Video Active Js 
     ---------------------------------*/
-    $('.video-icon').magnificPopup({
+    JQuery('.video-icon').magnificPopup({
         type: 'iframe',
         removalDelay: 300,
         mainClass: 'mfp-fade'
@@ -80,22 +80,22 @@ $(document).ready(function() {
     /*--------------------------------
         05. Home page 1 Masonery Active
     ---------------------------------*/
-    $(window).on('load', function() {
-        if ($('.consultancy_masonery_container').length) {
-            var $container = $('.consultancy_masonery_container').isotope({
+    JQuery(window).on('load', function() {
+        if (JQuery('.consultancy_masonery_container').length) {
+            var JQuerycontainer = JQuery('.consultancy_masonery_container').isotope({
                 itemSelector: '.consultancy_masonery_item',
                 masonry: {
                     columnWidth: '.consultancy_masonery_sizer'
                 }
             });
-            $('.consultancy_masonery_menu a').on('click', function() {
-                if ($(this).hasClass('active')) return false;
-                $(this).parent().find('.active').removeClass('active');
-                $(this).addClass('active');
-                $(this).closest('.consultancy_masonery_menu').find('.title').text($(this).find('.text').text());
-                if ($(this).closest('.consultancy_masonery_menu').find('.title').is(':visible')) $(this).closest('.consultancy_masonery_menu').find('.toggle').slideUp();
-                var filterValue = $(this).attr('data-filter');
-                $container.isotope({
+            JQuery('.consultancy_masonery_menu a').on('click', function() {
+                if (JQuery(this).hasClass('active')) return false;
+                JQuery(this).parent().find('.active').removeClass('active');
+                JQuery(this).addClass('active');
+                JQuery(this).closest('.consultancy_masonery_menu').find('.title').text(JQuery(this).find('.text').text());
+                if (JQuery(this).closest('.consultancy_masonery_menu').find('.title').is(':visible')) JQuery(this).closest('.consultancy_masonery_menu').find('.toggle').slideUp();
+                var filterValue = JQuery(this).attr('data-filter');
+                JQuerycontainer.isotope({
                     filter: filterValue
                 });
             });
@@ -105,7 +105,7 @@ $(document).ready(function() {
     /*----------------------------
         06. Our serviecasousel Active
     ------------------------------ */
-    $(".our_service_carousel_active").owlCarousel({
+    JQuery(".our_service_carousel_active").owlCarousel({
         items: 4,
         autoplay: true,
         loop: true,
@@ -134,7 +134,7 @@ $(document).ready(function() {
     /*----------------------------
         07. home blog section casousel Active
     ------------------------------ */
-    $(".complete_project_active").owlCarousel({
+    JQuery(".complete_project_active").owlCarousel({
         items: 3,
         autoplay: true,
         loop: true,
@@ -163,7 +163,7 @@ $(document).ready(function() {
     /*----------------------------
         08. home blog section casousel Active
     ------------------------------ */
-    $(".client_say_testimonial_active").owlCarousel({
+    JQuery(".client_say_testimonial_active").owlCarousel({
         items: 3,
         autoplay: true,
         loop: true,
@@ -192,7 +192,7 @@ $(document).ready(function() {
     /*----------------------------
         09. home blog section casousel Active
     ------------------------------ */
-    // $(".single_blog_h_active").owlCarousel({
+    // JQuery(".single_blog_h_active").owlCarousel({
     //     items: 2,
     //     autoplay: true,
     //     loop: true,
@@ -206,7 +206,7 @@ $(document).ready(function() {
     //     smartSpeed: 1000
     // });
 
-     // $(".single_blog_h_active").owlCarousel({
+     // JQuery(".single_blog_h_active").owlCarousel({
         // items: 2,
         // autoplay: true,
         // loop: true,
@@ -235,7 +235,7 @@ $(document).ready(function() {
     /*--------------------------------
         10. Digital Client Active
     ---------------------------------*/
-    $('.single_a_me_list').owlCarousel({
+    JQuery('.single_a_me_list').owlCarousel({
         items: 4,
         loop: true,
         margin: 133,
@@ -412,8 +412,8 @@ $(document).ready(function() {
         13. Gmaps active js
     ------------------------------*/
     var map;
-    $('#map').each(function() {
-        var element = $(this).attr('id');
+    JQuery('#map').each(function() {
+        var element = JQuery(this).attr('id');
         map = new GMaps({
             el: '#' + element,
             center: new google.maps.LatLng(36.7426331, 34.3888199),
@@ -504,7 +504,7 @@ $(document).ready(function() {
     /*----------------------------
         14. MixItUp JS Active
     ------------------------------ */
-    $('.mix-active').mixItUp();
+    JQuery('.mix-active').mixItUp();
 
     /*----------------------------
         15. Wow JS Active
@@ -514,7 +514,7 @@ $(document).ready(function() {
     /*----------------------------
         16. Counter Up
     ------------------------------ */
-    $('.counter').counterUp({
+    JQuery('.counter').counterUp({
         delay: 10,
         time: 5000
     });
@@ -522,7 +522,7 @@ $(document).ready(function() {
     /*--------------------------------
         17. Textillate
     ---------------------------------*/
-    $('.banner_effect').textillate({ in : {
+    JQuery('.banner_effect').textillate({ in : {
             effect: 'fadeInRight',
             delayScale: 2
         },
@@ -536,7 +536,7 @@ $(document).ready(function() {
     /*----------------------------
         18. Preloader
     ------------------------------ */
-    $(window).load(function() {
-        $('.preloader').fadeOut(2000);
+    JQuery(window).load(function() {
+        JQuery('.preloader').fadeOut(2000);
     });
 });
